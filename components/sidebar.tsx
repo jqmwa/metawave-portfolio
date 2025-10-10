@@ -43,7 +43,7 @@ export function Sidebar() {
   }, [])
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-80 bg-sidebar border-r border-sidebar-border p-8 flex flex-col justify-between overflow-hidden">
+    <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-sidebar border-r border-sidebar-border p-8 flex-col justify-between overflow-hidden">
       <audio ref={hoverSoundRef} src="/hover-sound.mp3" preload="auto" />
 
       <div className="flex flex-col items-center text-center">
