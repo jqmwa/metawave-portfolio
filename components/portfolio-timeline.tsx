@@ -5,6 +5,12 @@ import { useRef } from "react"
 
 const projects = [
   {
+    id: 38,
+    title: "Featured Design",
+    description: "Latest portfolio showcase with cutting-edge design elements",
+    image: "https://i.imgur.com/nFyaBwx.png",
+  },
+  {
     id: 1,
     title: "Quantum Interface",
     description: "Futuristic quantum computing dashboard with holographic elements",
