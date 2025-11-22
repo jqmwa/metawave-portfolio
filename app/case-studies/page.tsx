@@ -14,10 +14,10 @@ export default function CaseStudies() {
           <div className="max-w-7xl mx-auto py-12 px-6">
             <div className="mb-12">
               <h1 className="text-5xl font-bold text-foreground mb-4">
-                Case <span className="text-primary">Studies</span>
+                Featured <span className="text-primary">Work</span>
               </h1>
               <p className="text-lg text-muted-foreground">
-                Explore our detailed case studies showcasing our design process and solutions
+                Explore detailed case studies showcasing our design process and solutions
               </p>
             </div>
 

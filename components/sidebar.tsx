@@ -57,7 +57,7 @@ export function Sidebar() {
         <Link href="/" className="cursor-pointer">
           <h1 className="text-2xl font-bold text-foreground mb-1 hover:text-primary transition-colors">Metawave Studio</h1>
         </Link>
-        <p className="text-sm text-muted-foreground mb-2">Designing intricate experiences, data, and crafting the future of connection.</p>
+        <p className="text-sm text-muted-foreground mb-2">Designing intricate experiences, data, and crafting the future of connection. Led by James Q. Marsh.</p>
         <Badge 
           variant="secondary"
           className="bg-primary/10 text-primary border border-primary/30 text-xs px-2 py-0.5"
