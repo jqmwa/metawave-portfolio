@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
+import Link from "next/link"
 
 interface Particle {
   id: number
@@ -47,12 +48,16 @@ export function Sidebar() {
       <audio ref={hoverSoundRef} src="/hover-sound.mp3" preload="auto" />
 
       <div className="flex flex-col items-center text-center">
-        <Avatar className="w-24 h-24 mb-4 ring-2 ring-primary">
-          <AvatarImage src="https://i.imgur.com/wQVOeSB.png" alt="Designer" />
-          <AvatarFallback className="bg-primary text-primary-foreground text-2xl font-bold">MW</AvatarFallback>
-        </Avatar>
-        <h1 className="text-2xl font-bold text-foreground mb-1">Metawave Studio</h1>
-        <p className="text-sm text-muted-foreground mb-2">Digital Design Agency</p>
+        <Link href="/" className="cursor-pointer">
+          <Avatar className="w-24 h-24 mb-4 ring-2 ring-primary hover:ring-primary/70 transition-all cursor-pointer">
+            <AvatarImage src="https://i.imgur.com/wQVOeSB.png" alt="Designer" />
+            <AvatarFallback className="bg-primary text-primary-foreground text-2xl font-bold">MW</AvatarFallback>
+          </Avatar>
+        </Link>
+        <Link href="/" className="cursor-pointer">
+          <h1 className="text-2xl font-bold text-foreground mb-1 hover:text-primary transition-colors">Metawave Studio</h1>
+        </Link>
+        <p className="text-sm text-muted-foreground mb-2">Designing intricate experiences, data, and crafting the future of connection.</p>
         <Badge 
           variant="secondary"
           className="bg-primary/10 text-primary border border-primary/30 text-xs px-2 py-0.5"
@@ -86,7 +91,7 @@ export function Sidebar() {
         </div>
 
         <div className="absolute bottom-6 left-6 text-xs text-[#1a1a1a] font-medium transition-all duration-300 group-hover:bottom-8 group-hover:left-8 z-10">
-          get started
+          Let's Talk
         </div>
         <div className="absolute bottom-6 right-6 transition-all duration-300 group-hover:bottom-8 group-hover:right-8 z-10">
           <ArrowRight className="w-4 h-4 text-[#1a1a1a] transition-transform group-hover:translate-x-0.5" />
