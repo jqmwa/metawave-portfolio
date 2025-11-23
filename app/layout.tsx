@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Metawave Studio - Digital Design Agency",
   description: "Cyberpunk portfolio showcasing cutting-edge digital designs",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
