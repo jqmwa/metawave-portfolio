@@ -35,10 +35,10 @@ export default function SocialAuditsCaseStudy() {
             
             <div className="space-y-4 mb-8">
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
-                <p className="text-lg font-semibold">AI-Powered Social Media Auditing</p>
+                <p className="text-lg font-semibold">Brand identity</p>
               </div>
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
-                <p className="text-lg font-semibold">Dashboard Design</p>
+                <p className="text-lg font-semibold">Visual Direction</p>
               </div>
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
                 <p className="text-lg font-semibold">Analytics Interface</p>
