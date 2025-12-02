@@ -57,7 +57,7 @@ export function Sidebar() {
         <Link href="/" className="cursor-pointer">
           <h1 className="text-2xl font-bold text-foreground mb-1 hover:text-primary transition-colors">Metawave Studio</h1>
         </Link>
-        <p className="text-sm text-muted-foreground mb-2">Crafting the future of connection with stylish and intricate designs. Led by James Marsh.</p>
+        <p className="text-sm text-muted-foreground mb-2">Onchain Web3 projects with intricate designs. Led by James Marsh.</p>
         <Badge 
           variant="secondary"
           className="bg-primary/10 text-primary border border-primary/30 text-xs px-2 py-0.5"
@@ -71,7 +71,7 @@ export function Sidebar() {
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={playHoverSound}
-        className="magnetic-btn relative w-full aspect-square bg-[#62BE8F] rounded-[32px] overflow-visible group transition-all duration-300 hover:scale-[0.98] hover:shadow-lg hover:shadow-[#62BE8F]/20 p-6 hover:p-8 block"
+        className="magnetic-btn relative w-full aspect-square bg-[#FFFFFF] rounded-[32px] overflow-visible group transition-all duration-300 hover:scale-[0.98] hover:shadow-lg hover:shadow-[#62BE8F]/20 p-6 hover:p-8 block"
       >
         {/* Particles Field Effect */}
         <div className="particles-field">

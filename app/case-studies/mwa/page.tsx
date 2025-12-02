@@ -22,7 +22,7 @@ export default function MWACaseStudy() {
             {/* Image */}
             <div className="mb-8">
               <img
-                src="https://i.imgur.com/YrtkD2a.png"
+                src="https://i.imgur.com/blWW0jZ.png"
                 alt="Mental Wealth Academy"
                 className="w-full h-auto rounded-lg"
               />
@@ -35,13 +35,19 @@ export default function MWACaseStudy() {
             
             <div className="space-y-4 mb-8">
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
-                <p className="text-lg font-semibold">Mental Health Accountability</p>
+                <p className="text-lg font-semibold">Pitch Deck</p>
               </div>
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
-                <p className="text-lg font-semibold">Community Building</p>
+                <p className="text-lg font-semibold">Brand Identity</p>
               </div>
               <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
-                <p className="text-lg font-semibold">Goal Tracking</p>
+                <p className="text-lg font-semibold">Visualization</p>
+              </div>
+              <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
+                <p className="text-lg font-semibold">Mobile Design</p>
+              </div>
+              <div className="w-full p-6 border border-primary/20 rounded-lg bg-card/50 backdrop-blur-sm">
+                <p className="text-lg font-semibold">Design System</p>
               </div>
             </div>
 
@@ -50,18 +56,33 @@ export default function MWACaseStudy() {
             {/* Images */}
             <div className="space-y-6 mb-8">
               <img
-                src="https://i.imgur.com/WtS0XaF.png"
-                alt="MWA Case Study Image 1"
-                className="w-full h-auto rounded-lg"
-              />
-              <img
-                src="https://i.imgur.com/rKwlNOV.png"
+                src="https://i.imgur.com/9I1iP8H.jpeg"
                 alt="MWA Case Study Image 2"
                 className="w-full h-auto rounded-lg"
               />
               <img
-                src="https://i.imgur.com/6ae0C3t.jpeg"
-                alt="MWA Case Study Image 3"
+                src="https://i.imgur.com/u0YYuIh.png"
+                alt="MWA Case Study Image 6"
+                className="w-full h-auto rounded-lg"
+              />
+              <img
+                src="https://i.imgur.com/Ph0hSvt.jpeg"
+                alt="MWA Case Study Image 8"
+                className="w-full h-auto rounded-lg"
+              />
+              <img
+                src="https://i.imgur.com/dM9e1va.png"
+                alt="MWA Case Study Image 9"
+                className="w-full h-auto rounded-lg"
+              />
+              <img
+                src="https://i.imgur.com/Hg9QasA.png"
+                alt="MWA Case Study Image 10"
+                className="w-full h-auto rounded-lg"
+              />
+              <img
+                src="https://i.imgur.com/rfB5sq1.png"
+                alt="MWA Case Study Image 11"
                 className="w-full h-auto rounded-lg"
               />
               <img
@@ -75,18 +96,23 @@ export default function MWACaseStudy() {
                 className="w-full h-auto rounded-lg"
               />
               <img
-                src="https://i.imgur.com/TrMgjRO.png"
-                alt="MWA Case Study Image 6"
+                src="https://i.imgur.com/Jjcou09.png"
+                alt="MWA Case Study Image 12"
                 className="w-full h-auto rounded-lg"
               />
               <img
-                src="https://i.imgur.com/OGZ82Nt.png"
-                alt="MWA Case Study Image 7"
+                src="https://i.imgur.com/TCjAf8U.png"
+                alt="MWA Case Study Image 13"
                 className="w-full h-auto rounded-lg"
               />
               <img
-                src="https://i.imgur.com/Ph0hSvt.jpeg"
-                alt="MWA Case Study Image 8"
+                src="https://i.imgur.com/IH9hn7a.jpeg"
+                alt="MWA Case Study Image 14"
+                className="w-full h-auto rounded-lg"
+              />
+              <img
+                src="https://i.imgur.com/RAkQwM6.png"
+                alt="MWA Case Study Image 15"
                 className="w-full h-auto rounded-lg"
               />
             </div>
