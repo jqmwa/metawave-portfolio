@@ -15,7 +15,31 @@ export const metadata: Metadata = {
   description: "Cyberpunk portfolio showcasing cutting-edge digital designs",
   generator: "v0.app",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
+  openGraph: {
+    title: "Metawave Studio - Digital Design Agency",
+    description: "Cyberpunk portfolio showcasing cutting-edge digital designs",
+    type: "website",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 1200,
+        height: 630,
+        alt: "Metawave Studio Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metawave Studio - Digital Design Agency",
+    description: "Cyberpunk portfolio showcasing cutting-edge digital designs",
+    images: ["/favicon.png"],
   },
 }
 
