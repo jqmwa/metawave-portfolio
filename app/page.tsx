@@ -4,8 +4,13 @@ import { PortfolioTimeline } from "@/components/portfolio-timeline"
 import { CompanySection } from "@/components/company-section"
 import { Testimonials } from "@/components/testimonials"
 import { Footer } from "@/components/footer"
+import { getAllProjects } from "@/lib/projects"
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const projects = await getAllProjects();
+
   return (
     <div className="flex min-h-screen bg-background">
       <Sidebar />
@@ -13,7 +18,7 @@ export default function Home() {
       <main className="flex-1 ml-0 lg:ml-80">
         <TopNavbar />
         <div className="overflow-y-auto">
-          <PortfolioTimeline />
+          <PortfolioTimeline projects={projects} />
           <CompanySection />
           <Testimonials />
           <Footer />
