@@ -67,9 +67,7 @@ export function Sidebar() {
       </div>
 
       <a
-        href="https://calendly.com/metawavestudio"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/contact"
         onMouseEnter={playHoverSound}
         className="magnetic-btn relative w-full aspect-square bg-[#FFFFFF] rounded-[32px] overflow-visible group transition-all duration-300 hover:scale-[0.98] hover:shadow-lg hover:shadow-[#62BE8F]/20 p-6 hover:p-8 block"
       >
