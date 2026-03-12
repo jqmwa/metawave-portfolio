@@ -33,17 +33,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-foreground mb-4">Connect</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="https://github.com/jqmwa" className="hover:text-primary transition-colors">
                   Twitter
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="https://discord.com/invite/ZTRVCYwncs" className="hover:text-primary transition-colors">
                   Discord
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="https://github.com/jqmwa" className="hover:text-primary transition-colors">
                   GitHub
                 </a>
               </li>
