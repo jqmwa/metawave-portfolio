@@ -1,8 +1,8 @@
 export function CompanySection() {
   const dataPoints = [
-    { label: "Projects Completed", value: "250+" },
-    { label: "Happy Clients", value: "180+" },
-    { label: "Awards Won", value: "45+" },
+    { label: "Projects Completed", value: "20+" },
+    { label: "Happy Clients", value: "20+" },
+    { label: "Awards Won", value: "3+" },
     { label: "Years Experience", value: "8+" },
   ]
 
