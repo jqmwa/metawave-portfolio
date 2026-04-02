@@ -4,53 +4,57 @@ import { Sidebar } from "@/components/sidebar"
 import { TopNavbar } from "@/components/top-navbar"
 import { Footer } from "@/components/footer"
 import { uxLaws } from "@/lib/ux-laws-data"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import Link from "next/link"
 
+const GLITCH_CHARS = "0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`"
+
 function GlitchText({ text }: { text: string }) {
-  const ref = useRef<HTMLHeadingElement>(null)
+  const [display, setDisplay] = useState(text)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+
+  const scramble = useCallback(() => {
+    const chars = text.split("")
+    const numToScramble = Math.floor(Math.random() * 4) + 2
+    const indices = new Set<number>()
+    while (indices.size < Math.min(numToScramble, chars.length)) {
+      indices.add(Math.floor(Math.random() * chars.length))
+    }
+
+    let frame = 0
+    const totalFrames = 4
+
+    const animate = () => {
+      if (frame >= totalFrames) {
+        setDisplay(text)
+        timeoutRef.current = setTimeout(scramble, Math.random() * 4000 + 2000)
+        return
+      }
+
+      const scrambled = chars.map((char, i) => {
+        if (indices.has(i) && char !== " ") {
+          return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
+        }
+        return char
+      })
+      setDisplay(scrambled.join(""))
+      frame++
+      timeoutRef.current = setTimeout(animate, 60)
+    }
+
+    animate()
+  }, [text])
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    let animationId: number
-    let timeout: ReturnType<typeof setTimeout>
-
-    const glitch = () => {
-      el.style.textShadow = `
-        ${Math.random() * 4 - 2}px ${Math.random() * 2 - 1}px 0 rgba(33, 186, 140, 0.7),
-        ${Math.random() * -4 + 2}px ${Math.random() * 2 - 1}px 0 rgba(102, 83, 223, 0.7),
-        ${Math.random() * 2 - 1}px ${Math.random() * 4 - 2}px 0 rgba(212, 207, 242, 0.4)
-      `
-      el.style.transform = `translate(${Math.random() * 2 - 1}px, ${Math.random() * 1 - 0.5}px)`
-
-      timeout = setTimeout(() => {
-        el.style.textShadow = "none"
-        el.style.transform = "translate(0, 0)"
-      }, 100)
-
-      animationId = requestAnimationFrame(() => {
-        setTimeout(glitch, Math.random() * 3000 + 2000)
-      })
-    }
-
-    const initial = setTimeout(glitch, Math.random() * 2000)
-
+    timeoutRef.current = setTimeout(scramble, Math.random() * 3000 + 500)
     return () => {
-      clearTimeout(initial)
-      clearTimeout(timeout)
-      cancelAnimationFrame(animationId)
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
     }
-  }, [])
+  }, [scramble])
 
   return (
-    <h2
-      ref={ref}
-      className="text-3xl md:text-4xl font-bold text-foreground transition-transform duration-75"
-      style={{ willChange: "transform, text-shadow" }}
-    >
-      {text}
+    <h2 className="text-lg font-bold text-foreground font-mono">
+      {display}
     </h2>
   )
 }
@@ -68,6 +72,25 @@ function getCategoryColor(category: string) {
   }
 }
 
+// Space images from Unsplash
+const cardImages = [
+  "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80",
+  "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=600&q=80",
+  "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=600&q=80",
+  "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=600&q=80",
+  "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80",
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+  "https://images.unsplash.com/photo-1484589065579-248aad0d628b?w=600&q=80",
+  "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=600&q=80",
+  "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&q=80",
+  "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=600&q=80",
+  "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&q=80",
+  "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=600&q=80",
+  "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=600&q=80",
+  "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=600&q=80",
+  "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=80",
+]
+
 export default function UXLaws() {
   return (
     <div className="flex min-h-screen bg-background">
@@ -77,7 +100,7 @@ export default function UXLaws() {
         <TopNavbar />
         <div className="overflow-y-auto">
           <div className="max-w-7xl mx-auto py-12 px-6">
-            <div className="mb-16">
+            <div className="mb-12">
               <div className="text-xs font-mono text-primary uppercase tracking-wider mb-4">
                 Reference Guide
               </div>
@@ -91,40 +114,59 @@ export default function UXLaws() {
               </p>
             </div>
 
-            <div className="space-y-16">
-              {uxLaws.map((law) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {uxLaws.map((law, index) => (
                 <Link
                   key={law.id}
                   href={`/ux-laws/${law.slug}`}
-                  className="group relative block"
+                  className="group relative block rounded-xl bg-card border border-border/50 hover:border-primary/60 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 flex-wrap">
-                      <span className="text-sm font-mono text-muted-foreground">
+                  {/* Image with gradient + noise */}
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={cardImages[index]}
+                      alt=""
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Green + secondary gradient overlay */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(33, 186, 140, 0.55) 0%, rgba(102, 83, 223, 0.55) 100%)",
+                      }}
+                    />
+                    {/* Noise texture */}
+                    <div
+                      className="absolute inset-0 opacity-40 mix-blend-overlay"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                        backgroundSize: "128px 128px",
+                      }}
+                    />
+                    {/* Number overlay */}
+                    <div className="absolute top-3 left-3">
+                      <span className="text-xs font-mono text-white/70 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-md">
                         {String(law.id).padStart(2, "0")}
                       </span>
+                    </div>
+                    {/* Category badge */}
+                    <div className="absolute top-3 right-3">
                       <span
-                        className={`text-xs font-mono uppercase tracking-wider px-2 py-0.5 border rounded-full ${getCategoryColor(law.category)}`}
+                        className={`text-[10px] font-mono uppercase tracking-wider px-2 py-1 border rounded-full backdrop-blur-sm bg-black/20 ${getCategoryColor(law.category)}`}
                       >
                         {law.category}
                       </span>
                     </div>
-
-                    <GlitchText text={law.name} />
-
-                    <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                      {law.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span>Read more</span>
-                      <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                    </div>
                   </div>
 
-                  <div className="mt-8 h-px bg-gradient-to-r from-border/50 via-border/20 to-transparent" />
+                  {/* Content */}
+                  <div className="p-5">
+                    <GlitchText text={law.name} />
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                      {law.description}
+                    </p>
+                  </div>
                 </Link>
               ))}
             </div>

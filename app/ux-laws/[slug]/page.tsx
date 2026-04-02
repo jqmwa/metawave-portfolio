@@ -5,53 +5,57 @@ import { TopNavbar } from "@/components/top-navbar"
 import { Footer } from "@/components/footer"
 import { getLawBySlug, getAdjacentLaws, uxLaws } from "@/lib/ux-laws-data"
 import Link from "next/link"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import { useParams, notFound } from "next/navigation"
 
+const GLITCH_CHARS = "0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`"
+
 function GlitchText({ text }: { text: string }) {
-  const ref = useRef<HTMLHeadingElement>(null)
+  const [display, setDisplay] = useState(text)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+
+  const scramble = useCallback(() => {
+    const chars = text.split("")
+    const numToScramble = Math.floor(Math.random() * 6) + 3
+    const indices = new Set<number>()
+    while (indices.size < Math.min(numToScramble, chars.length)) {
+      indices.add(Math.floor(Math.random() * chars.length))
+    }
+
+    let frame = 0
+    const totalFrames = 5
+
+    const animate = () => {
+      if (frame >= totalFrames) {
+        setDisplay(text)
+        timeoutRef.current = setTimeout(scramble, Math.random() * 4000 + 2000)
+        return
+      }
+
+      const scrambled = chars.map((char, i) => {
+        if (indices.has(i) && char !== " ") {
+          return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
+        }
+        return char
+      })
+      setDisplay(scrambled.join(""))
+      frame++
+      timeoutRef.current = setTimeout(animate, 60)
+    }
+
+    animate()
+  }, [text])
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    let animationId: number
-    let timeout: ReturnType<typeof setTimeout>
-
-    const glitch = () => {
-      el.style.textShadow = `
-        ${Math.random() * 6 - 3}px ${Math.random() * 3 - 1.5}px 0 rgba(33, 186, 140, 0.7),
-        ${Math.random() * -6 + 3}px ${Math.random() * 3 - 1.5}px 0 rgba(102, 83, 223, 0.7),
-        ${Math.random() * 3 - 1.5}px ${Math.random() * 6 - 3}px 0 rgba(212, 207, 242, 0.4)
-      `
-      el.style.transform = `translate(${Math.random() * 3 - 1.5}px, ${Math.random() * 2 - 1}px)`
-
-      timeout = setTimeout(() => {
-        el.style.textShadow = "none"
-        el.style.transform = "translate(0, 0)"
-      }, 120)
-
-      animationId = requestAnimationFrame(() => {
-        setTimeout(glitch, Math.random() * 3000 + 2000)
-      })
-    }
-
-    const initial = setTimeout(glitch, Math.random() * 1500)
-
+    timeoutRef.current = setTimeout(scramble, Math.random() * 2000 + 500)
     return () => {
-      clearTimeout(initial)
-      clearTimeout(timeout)
-      cancelAnimationFrame(animationId)
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
     }
-  }, [])
+  }, [scramble])
 
   return (
-    <h1
-      ref={ref}
-      className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground transition-transform duration-75"
-      style={{ willChange: "transform, text-shadow" }}
-    >
-      {text}
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-mono">
+      {display}
     </h1>
   )
 }
