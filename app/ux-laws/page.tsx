@@ -80,7 +80,7 @@ const cardImages = [
   "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=600&q=80",
   "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80",
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
-  "https://images.unsplash.com/photo-1484589065579-248aad0d628b?w=600&q=80",
+  "https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=600&q=80",
   "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=600&q=80",
   "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&q=80",
   "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=600&q=80",
