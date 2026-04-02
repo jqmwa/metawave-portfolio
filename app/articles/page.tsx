@@ -29,12 +29,12 @@ export default function Articles() {
                 className="block"
               >
                 <Card className="group relative overflow-hidden border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer">
-                  <div className="aspect-[16/9] overflow-hidden bg-muted flex items-center justify-center">
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-background flex items-center justify-center p-12">
-                      <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center leading-tight">
-                        Express Design Choices To Win Over Clients, & Create Highly Profitable Businesses
-                      </h2>
-                    </div>
+                  <div className="aspect-[16/9] overflow-hidden bg-muted">
+                    <img
+                      src="https://miro.medium.com/1*9uV6zfXlonJv6iEICYStbA.png"
+                      alt="Express Design Choices To Win Over Clients, & Create Highly Profitable Businesses"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-2">
