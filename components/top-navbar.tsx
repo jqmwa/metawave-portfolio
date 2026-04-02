@@ -7,12 +7,26 @@ export function TopNavbar() {
         <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors cursor-pointer">
           Metawave Studio
         </Link>
-        <a 
-          href="/case-studies" 
-          className="text-sm text-foreground hover:text-primary transition-colors"
-        >
-          Case Studies
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="/articles"
+            className="text-sm text-foreground hover:text-primary transition-colors"
+          >
+            Articles
+          </a>
+          <a
+            href="/ux-laws"
+            className="text-sm text-foreground hover:text-primary transition-colors"
+          >
+            UX Laws
+          </a>
+          <a
+            href="/case-studies"
+            className="text-sm text-foreground hover:text-primary transition-colors"
+          >
+            Case Studies
+          </a>
+        </div>
       </div>
     </nav>
   )
