@@ -11,9 +11,9 @@ export default function CaseStudies() {
       <main className="flex-1 ml-0 lg:ml-80">
         <TopNavbar />
         <div className="overflow-y-auto">
-          <div className="max-w-7xl mx-auto py-12 px-6">
+          <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
             <div className="mb-12">
-              <h1 className="text-5xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Featured <span className="text-primary">Work</span>
               </h1>
               <p className="text-lg text-muted-foreground">
@@ -39,7 +39,7 @@ export default function CaseStudies() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-2xl font-bold mb-2">Autocrat</h3>
                     <p className="text-muted-foreground">
-                      How Autocrat unlocked millions in DAO decision-making models for communities.
+                      AI agent squad builder for DAO trading and governance.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -62,7 +62,7 @@ export default function CaseStudies() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-2xl font-bold mb-2">Mental Wealth Academy</h3>
                     <p className="text-muted-foreground">
-                    Mental health accountability w/ community and goal tracking.
+                    Virtual learning environment and LMS for Web3.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -77,15 +77,15 @@ export default function CaseStudies() {
                   <div className="aspect-[16/9] overflow-hidden bg-muted">
                     <img
                       src="https://i.imgur.com/w3OJfrf.png"
-                      alt="Abnormal Fashion Design for SC"
+                      alt="LAAVish"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                   <div className="p-6">
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
-                    <h3 className="text-2xl font-bold mb-2">Abnormal Fashion Design for SC</h3>
+                    <h3 className="text-2xl font-bold mb-2">LAAVish</h3>
                     <p className="text-muted-foreground">
-                      A blend of accessibility and luxe dystopia.
+                      Fashion brand identity and e-commerce design.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -108,7 +108,7 @@ export default function CaseStudies() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-2xl font-bold mb-2">Digicat</h3>
                     <p className="text-muted-foreground">
-                      Brand identity, visual direction, and mobile design.
+                      Digital passport and membership card platform.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -131,7 +131,7 @@ export default function CaseStudies() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-2xl font-bold mb-2">SocialAudits.ai</h3>
                     <p className="text-muted-foreground">
-                      AI-powered social media auditing with dashboard design and analytics interface.
+                      Blockchain forensics and wallet auditing dashboard.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

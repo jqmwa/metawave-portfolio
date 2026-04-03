@@ -13,17 +13,17 @@ export default function SCCaseStudy() {
       <main className="flex-1 ml-0 lg:ml-80">
         <TopNavbar />
         <div className="overflow-y-auto">
-          <div className="max-w-7xl mx-auto py-12 px-6">
+          <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
             {/* H1 */}
-            <h1 className="text-5xl font-bold text-foreground mb-8">
-              Abnormal Fashion Design for SC: a blend of accessibility and luxe dystopia.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-8">
+              LAAVish
             </h1>
 
             {/* Image */}
             <div className="mb-8">
               <img
                 src="https://i.imgur.com/w3OJfrf.png"
-                alt="Abnormal Fashion Design for SC"
+                alt="LAAVish"
                 className="w-full h-auto rounded-lg"
               />
             </div>
@@ -101,7 +101,7 @@ export default function SCCaseStudy() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-xl font-bold mb-2">Digicat</h3>
                     <p className="text-muted-foreground text-sm">
-                      Brand identity, visual direction, and mobile design.
+                      Digital passport and membership card platform.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -121,7 +121,7 @@ export default function SCCaseStudy() {
                     <div className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Case Study</div>
                     <h3 className="text-xl font-bold mb-2">Mental Wealth Academy</h3>
                     <p className="text-muted-foreground text-sm">
-                    Mental health accountability w/ community and goal tracking.
+                    Virtual learning environment and LMS for Web3.
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

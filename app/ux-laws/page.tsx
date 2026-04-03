@@ -99,12 +99,12 @@ export default function UXLaws() {
       <main className="flex-1 ml-0 lg:ml-80">
         <TopNavbar />
         <div className="overflow-y-auto">
-          <div className="max-w-7xl mx-auto py-12 px-6">
+          <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
             <div className="mb-12">
               <div className="text-xs font-mono text-primary uppercase tracking-wider mb-4">
                 Reference Guide
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
                 UX <span className="text-primary">Laws</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">

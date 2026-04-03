@@ -12,17 +12,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/case-studies" className="hover:text-primary transition-colors">
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  About
+                <a href="/articles" className="hover:text-primary transition-colors">
+                  Articles
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/contact" className="hover:text-primary transition-colors">
                   Contact
                 </a>
               </li>
