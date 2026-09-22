@@ -49,7 +49,7 @@ async function seed() {
     { title: "Smart City Interface", description: "Urban planning and management dashboard for smart cities", image: "https://i.imgur.com/bJllb2F.png", sort_order: 16 },
     { title: "Virtual Showroom", description: "Immersive product showcase with 3D interactive elements", image: "https://i.imgur.com/Q3a6KOh.png", sort_order: 17 },
     { title: "Gaming Platform", description: "Next-generation gaming interface with social features", image: "https://i.imgur.com/2nBuwqu.jpeg", sort_order: 18 },
-    { title: "Music Visualizer", description: "Real-time audio visualization with stunning visual effects", image: "https://i.imgur.com/0nJeC1i.png", sort_order: 19 },
+    { title: "SoundCloud Spatial", description: "Redesigning the audio experience for standalone VR headsets. Solving spatial layout, hand-tracking accessibility, and multi-window navigation.", image: "https://i.imgur.com/0nJeC1i.png", sort_order: 19 },
     { title: "E-Commerce Hub", description: "Modern shopping experience with AR product previews", image: "https://i.imgur.com/llqXNTL.jpeg", sort_order: 20 },
     { title: "Social Network", description: "Decentralized social platform with Web3 integration", image: "https://i.imgur.com/uo6hBAZ.png", sort_order: 21 },
     { title: "Fitness Tracker", description: "Health and wellness dashboard with AI coaching", image: "https://i.imgur.com/DgVQe2a.png", sort_order: 22 },
