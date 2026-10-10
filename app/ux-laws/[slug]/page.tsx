@@ -12,7 +12,7 @@ const GLITCH_CHARS = "0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/~`"
 
 function GlitchText({ text }: { text: string }) {
   const [display, setDisplay] = useState(text)
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   const scramble = useCallback(() => {
     const chars = text.split("")

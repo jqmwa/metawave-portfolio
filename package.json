@@ -10,6 +10,7 @@
     "seed": "npx tsx scripts/seed.ts"
   },
   "dependencies": {
+    "@elevenlabs/client": "^1.27.0",
     "@hookform/resolvers": "^3.10.0",
     "@libsql/client": "^0.17.0",
     "@radix-ui/react-accordion": "1.2.2",
