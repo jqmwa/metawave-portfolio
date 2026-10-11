@@ -31,15 +31,6 @@ export function PortfolioTimeline({ projects }: PortfolioTimelineProps) {
     <div className="max-w-5xl mx-auto py-12 px-6">
       <audio ref={hoverSoundRef} src="/hover-sound.mp3" preload="auto" />
 
-      {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">
-          James Marsh
-        </h1>
-        <p className="text-base sm:text-lg text-muted-foreground">
-          Product architecture, spatial computing, and interactive digital systems.
-        </p>
-      </div>
 
       {/* Timeline */}
       <div className="space-y-8">
