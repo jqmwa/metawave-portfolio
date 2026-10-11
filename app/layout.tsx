@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Rethink_Sans } from "next/font/google"
 import { Suspense } from "react"
-import { FloatingQCard } from "@/components/q-card/FloatingQCard"
+import { FloatingJamesCard } from "@/components/james-card/FloatingJamesCard"
 import "./globals.css"
 
 const rethinkSans = Rethink_Sans({
@@ -53,7 +53,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${rethinkSans.variable}`}>
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <FloatingQCard />
+        <FloatingJamesCard />
       </body>
     </html>
   )

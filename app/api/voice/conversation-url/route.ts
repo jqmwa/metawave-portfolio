@@ -5,9 +5,13 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
   const apiKey = process.env.ELEVENLABS_API_KEY?.trim().replace(/^['"]|['"]$/g, '');
-  const rawAgentId = process.env.ELEVENLABS_AGENT_ID_Q?.trim() || 'agent_9201m4e3qnv6f87bewbankzh7ytj';
+  const rawAgentId =
+    process.env.ELEVENLABS_AGENT_ID_JAMES?.trim() ||
+    process.env.ELEVENLABS_AGENT_ID?.trim() ||
+    process.env.ELEVENLABS_AGENT_ID_Q?.trim() ||
+    'agent_9201m4e3qnv6f87bewbankzh7ytj';
   const agentId = rawAgentId.replace(/^['"]|['"]$/g, '');
-  const companionName = 'Q';
+  const companionName = 'James';
 
   if (!apiKey) {
     return NextResponse.json(
