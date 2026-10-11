@@ -33,11 +33,11 @@ export function PortfolioTimeline({ projects }: PortfolioTimelineProps) {
 
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-          James Marsh — Product & UI/UX Designer specializing in immersive 3D, Web3, and interactive digital products.
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">
+          James Marsh
         </h1>
-        <p className="text-lg text-muted-foreground">
-          Solving complex user experience challenges through intuitive product architecture, spatial computing, and interactive systems.
+        <p className="text-base sm:text-lg text-muted-foreground">
+          Product architecture, spatial computing, and interactive digital systems.
         </p>
       </div>
 
@@ -57,13 +57,6 @@ export function PortfolioTimeline({ projects }: PortfolioTimelineProps) {
           const description = isSoundCloudVR
             ? "Redesigning the audio experience for standalone VR headsets. Solving spatial layout, hand-tracking accessibility, and multi-window navigation."
             : project.description;
-
-          const caseStudyLink =
-            project.link && project.link.trim() !== ""
-              ? project.link
-              : isSoundCloudVR
-              ? "/case-studies/sc"
-              : "/case-studies";
 
           return (
             <Card
@@ -90,15 +83,17 @@ export function PortfolioTimeline({ projects }: PortfolioTimelineProps) {
                   <h3 className="text-3xl font-bold text-foreground mb-2">{title}</h3>
                   <p className="text-lg text-muted-foreground">{description}</p>
 
-                  <div className="mt-5">
-                    <a
-                      href={caseStudyLink}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all shadow-md hover:shadow-lg shadow-primary/20 hover:shadow-primary/30 uppercase tracking-wider font-mono cursor-pointer"
-                    >
-                      Read Case Study
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </a>
-                  </div>
+                  {isSoundCloudVR && (
+                    <div className="mt-5">
+                      <a
+                        href="/case-studies/sc"
+                        className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all shadow-md hover:shadow-lg shadow-primary/20 hover:shadow-primary/30 uppercase tracking-wider font-mono cursor-pointer"
+                      >
+                        Read Case Study
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </Card>

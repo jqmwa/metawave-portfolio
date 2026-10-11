@@ -27,11 +27,6 @@ interface SpokenMessage {
   text: string;
 }
 
-const QUICK_PROMPTS = [
-  'What is Metawave Studio?',
-  "What's your design philosophy?",
-  'What are you currently building?',
-];
 
 export function FloatingJamesCard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -480,20 +475,6 @@ export function FloatingJamesCard() {
                     Direct neural audio link to <span className="text-white font-medium">James</span>.
                     Ask about Metawave's projects, spatial 3D interfaces, UX laws, or design philosophy.
                   </p>
-                </div>
-
-                {/* Quick Prompts */}
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {QUICK_PROMPTS.map((prompt, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => void startConversation(`User asks: ${prompt}`)}
-                      className="text-[10px] px-2.5 py-1 rounded-md bg-[#161626] hover:bg-[#21ba8c]/15 text-[#d4cff2] hover:text-[#21ba8c] border border-white/5 hover:border-[#21ba8c]/40 transition-all text-left cursor-pointer"
-                    >
-                      {prompt}
-                    </button>
-                  ))}
                 </div>
               </div>
             )}
